@@ -34,7 +34,7 @@ border-bottom-size = 0
 border-color = #00000000
 
 padding-left = 1
-padding-right = 0
+padding-right = 5
 
 spacing = 1
 
@@ -51,6 +51,8 @@ modules-right = volume
 
 tray-position = right
 tray-padding = 0
+tray-offset-x = -26
+tray-offset-y = -14 
 ;tray-transparent = true
 ;tray-background = #0063ff
 
