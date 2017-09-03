@@ -18,9 +18,9 @@ alert = #bd2c40
 
 [bar/Bar]
 width = 100%
-height = 27
-offset-x =  
-offset-y =  
+height = 40 
+offset-x = 1%  
+offset-y = 1% 
 fixed-center = true
 
 background = ${colors.background}
@@ -29,30 +29,30 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 
+border-size = 20 
+border-bottom-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 1
+padding-right = 0
+
+spacing = 1
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = SourceCodePro:size=10;4
+font-1 = SourceSansPro:size=10;4 
+font-2 = FontAwesome:size=10;4 
 
 modules-left = i3
 modules-center = date 
 modules-right = filesystem volume memory cpu eth temperature powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 ;tray-transparent = true
 ;tray-background = #0063ff
-
-;wm-restack = i3
-;override-redirect = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -131,28 +131,6 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
 
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
 [module/eth]
 type = internal/network
 interface = enp3s0
@@ -188,13 +166,14 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <ramp-volume> <bar-volume>
+format-muted =  <bar-volume> 
+ramp-volume-0 = 
+ramp-volume-1 =  
+ramp-volume-2 =  
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -212,33 +191,6 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
@@ -295,8 +247,3 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; vim:ft=dosini
