@@ -18,3 +18,5 @@ set smartindent
 set foldcolumn=1
 
 set wildmenu
+let base16colorspace=256
+colorscheme base16-ocean

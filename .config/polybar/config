@@ -8,13 +8,22 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+base00 = ${xrdb:color0:#000000}
+base01 = ${xrdb:color10:#000000}
+base02 = ${xrdb:color11:#000000}
+base03 = ${xrdb:color8:#000000}
+base04 = ${xrdb:color12:#000000}
+base05 = ${xrdb:color7:#000000}
+base06 = ${xrdb:color13:#000000}
+base07 = ${xrdb:color15:#000000}
+base08 = ${xrdb:color1:#000000}
+base09 = ${xrdb:color9:#000000}
+base0A = ${xrdb:color3:#000000}
+base0B = ${xrdb:color2:#000000}
+base0C = ${xrdb:color6:#000000}
+base0D = ${xrdb:color4:#000000}
+base0E = ${xrdb:color5:#000000}
+base0F = ${xrdb:color14:#000000}
 
 [bar/Bar]
 width = 100%
@@ -23,8 +32,8 @@ offset-x = 1%
 offset-y = 1% 
 fixed-center = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.base00}
+foreground = ${colors.base05}
 
 line-size = 3
 line-color = #f00
@@ -41,13 +50,13 @@ spacing = 1
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = SourceCodePro:size=10;4
-font-1 = SourceSansPro:size=10;4 
+font-0 = SourceSansPro:size=10;4
+font-1 = SourceCodePro:size=10;4 
 font-2 = FontAwesome:size=10;4 
 
 modules-left = i3
-modules-center = date
-modules-right = volume
+modules-center = 
+modules-right = volume date
 
 tray-position = right
 tray-padding = 0
@@ -66,12 +75,12 @@ wrapping-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.base01}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt} 
-label-focused-underline = ${colors.primary} 
+label-focused-background = ${colors.base00} 
+label-focused-underline = ${colors.base08} 
 label-focused-padding = 2 
 
 ; unfocused = Inactive workspace on any monitor
@@ -86,7 +95,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.alert} 
+label-urgent-background = ${colors.base0B} 
 label-urgent-padding = 2 
 
 [module/date]
@@ -100,7 +109,7 @@ time = %I:%M %p
 time-alt = %I:%M:%S %p 
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.base00}
 
 label = %date% %time%
 
@@ -114,7 +123,7 @@ ramp-volume-1 = 
 ramp-volume-2 =  
 label-volume-foreground = ${root.foreground}
 
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-foreground = ${colors.base05}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -131,7 +140,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.base00}
 
 [settings]
 screenchange-reload = true
